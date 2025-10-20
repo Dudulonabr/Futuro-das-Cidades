@@ -1000,7 +1000,7 @@
     }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 300px) {
     .blog-grid {
         grid-template-columns: 1fr;
     }
@@ -1060,7 +1060,7 @@
 }
 
 /* Normalize on phones */
-@media (max-width: 575.98px) {
+@media (max-width: 300px) {
     .blog-card,
     .blog-card.featured {
         grid-row: auto;

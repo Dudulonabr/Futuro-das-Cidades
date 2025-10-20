@@ -1,5 +1,5 @@
 
-@media (max-width: 575.98px) {
+@media (max-width: 300px) {
     .container {
         padding: 0 var(--spacing-sm);
         max-width: 100%;

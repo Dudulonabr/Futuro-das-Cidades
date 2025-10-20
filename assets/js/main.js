@@ -504,6 +504,7 @@ function initActiveNavigation() {
     window.addEventListener('resize', debounce(updateActiveNav, 150));
 }
 
+
 window.FuturoDasCidades = {
     animateCounter,
     throttle,
