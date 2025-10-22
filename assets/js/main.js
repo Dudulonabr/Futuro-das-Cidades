@@ -1,7 +1,22 @@
 
+// Enhanced initialization with error handling
 document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
+    try {
+        initializeApp();
+        console.log('✅ Site inicializado com sucesso!');
+    } catch (error) {
+        console.error('❌ Erro na inicialização:', error);
+        // Fallback initialization
+        initBasicFunctionality();
+    }
 });
+
+// Fallback initialization for critical functionality
+function initBasicFunctionality() {
+    initNavigation();
+    initAccessibility();
+    initActiveNavigation();
+}
 
 
 function initializeApp() {
@@ -505,12 +520,74 @@ function initActiveNavigation() {
 }
 
 
+// Performance monitoring
+function initPerformanceMonitoring() {
+    if ('performance' in window) {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+                console.log(`🚀 Tempo de carregamento: ${loadTime}ms`);
+                
+                // Report to analytics if available
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'page_load_time', {
+                        'value': Math.round(loadTime),
+                        'event_category': 'Performance'
+                    });
+                }
+            }, 0);
+        });
+    }
+}
+
+// Enhanced error handling
+window.addEventListener('error', function(e) {
+    console.error('❌ Erro JavaScript:', e.error);
+    // Could send to error tracking service
+});
+
+// Enhanced accessibility features
+function initEnhancedAccessibility() {
+    // Add keyboard navigation for floating cards
+    const floatingCards = document.querySelectorAll('.floating-card');
+    floatingCards.forEach((card, index) => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Card ${index + 1}: ${card.textContent.trim()}`);
+        
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+            }
+        });
+    });
+    
+    // Add live region for dynamic content
+    const liveRegion = document.createElement('div');
+    liveRegion.setAttribute('aria-live', 'polite');
+    liveRegion.setAttribute('aria-atomic', 'true');
+    liveRegion.className = 'sr-only';
+    liveRegion.id = 'live-region';
+    document.body.appendChild(liveRegion);
+}
+
+// Initialize enhanced features
+document.addEventListener('DOMContentLoaded', function() {
+    initPerformanceMonitoring();
+    initEnhancedAccessibility();
+});
+
+// Export enhanced API
 window.FuturoDasCidades = {
     animateCounter,
     throttle,
     debounce,
     announceToScreenReader: window.announceToScreenReader,
     initFloatingCardsAnimation,
-    initActiveNavigation
+    initActiveNavigation,
+    initPerformanceMonitoring,
+    initEnhancedAccessibility
 };
 
