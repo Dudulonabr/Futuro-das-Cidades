@@ -63,16 +63,20 @@ function initNavigation() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (navbarMenu.classList.contains('active')) {
+            if (navbarMenu && navbarMenu.classList.contains('active')) {
                 navbarMenu.classList.remove('active');
-                navbarToggle.setAttribute('aria-expanded', 'false');
-                navbarToggle.classList.remove('active');
+                if (navbarToggle) {
+                    navbarToggle.setAttribute('aria-expanded', 'false');
+                    navbarToggle.classList.remove('active');
+                }
             }
         });
     });
 
     
     document.addEventListener('click', function(e) {
+        if (!navbarToggle || !navbarMenu) return;
+
         if (!navbarToggle.contains(e.target) && !navbarMenu.contains(e.target)) {
             navbarMenu.classList.remove('active');
             navbarToggle.setAttribute('aria-expanded', 'false');
@@ -182,10 +186,13 @@ function initAnimations() {
 
 
 function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000; // 2 seconds
-    const increment = target / (duration / 16); // 60fps
+    const target = parseFloat(element.getAttribute('data-target'));
+    const suffix = element.getAttribute('data-suffix') || '';
+    const prefix = element.getAttribute('data-prefix') || '';
+    const duration = 2000;
+    const increment = target / (duration / 16);
     let current = 0;
+    const isDecimal = target % 1 !== 0;
 
     const timer = setInterval(() => {
         current += increment;
@@ -193,15 +200,17 @@ function animateCounter(element) {
             current = target;
             clearInterval(timer);
         }
-        
-        
-        if (target >= 1000) {
-            element.textContent = Math.floor(current).toLocaleString();
-        } else if (target < 1) {
-            element.textContent = current.toFixed(1);
+
+        let display;
+        if (isDecimal) {
+            display = current.toFixed(1);
+        } else if (target >= 1000 && !suffix) {
+            display = Math.floor(current).toLocaleString('pt-BR');
         } else {
-            element.textContent = Math.floor(current);
+            display = Math.floor(current).toString();
         }
+
+        element.textContent = prefix + display + suffix;
     }, 16);
 }
 
@@ -290,8 +299,12 @@ function initPerformanceOptimizations() {
 
 
 function preloadCriticalResources() {
+    if (window.location.protocol !== 'http:' && window.location.protocol !== 'https:') {
+        return;
+    }
+
     const criticalImages = [
-        'assets/images/hero-bg.jpg',
+        'assets/images/hero-bg.png',
         'assets/images/smart-city-concept.jpg'
     ];
 
@@ -343,13 +356,15 @@ window.addEventListener('error', function(e) {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(err) {
-                console.log('ServiceWorker registration failed');
-            });
+        if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('ServiceWorker registration successful');
+                })
+                .catch(function(err) {
+                    console.log('ServiceWorker registration failed');
+                });
+        }
     });
 }
 
