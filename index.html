@@ -26,6 +26,7 @@
 
     
     <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="assets/images/hero-bg.png" as="image">
     <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
     
     
@@ -33,6 +34,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/fixes.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
     
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,8 +69,13 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a href="index.html" class="logo" aria-label="Futuro das Cidades - Página inicial">
-                        <i class="fas fa-city" aria-hidden="true"></i>
-                        <span>Futuro das Cidades</span>
+                        <div class="logo-icon" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="logo-text">
+                            <strong>FUTURO</strong>
+                            <em>DAS CIDADES</em>
+                        </div>
                     </a>
                 </div>
                 
@@ -84,16 +91,16 @@
                             <a href="#home" class="nav-link active">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#cidades-inteligentes" class="nav-link">Cidades Inteligentes</a>
+                            <a href="#cidades-inteligentes" class="nav-link">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#sensores-urbanos" class="nav-link">Sensores Urbanos</a>
+                            <a href="#sensores-urbanos" class="nav-link">Soluções</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#predios-sustentaveis" class="nav-link">Prédios Sustentáveis</a>
+                            <a href="#predios-sustentaveis" class="nav-link">Projetos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#mobilidade-eletrica" class="nav-link">Mobilidade Elétrica</a>
+                            <a href="#mobilidade-eletrica" class="nav-link">Equipe</a>
                         </li>
                         <li class="nav-item">
                             <a href="blog.html" class="nav-link">Blog</a>
@@ -102,7 +109,10 @@
                             <a href="contato.html" class="nav-link">Contato</a>
                         </li>
                     </ul>
+                    <a href="contato.html" class="btn-participe-mobile btn-participe">Participe</a>
                 </div>
+
+                <a href="contato.html" class="btn-participe">Participe</a>
             </div>
         </nav>
     </header>
@@ -114,81 +124,95 @@
     <main id="main-content">
         
         <section id="home" class="hero">
-            <div class="hero-background">
-                <div class="hero-particles"></div>
-                <div class="hero-grid"></div>
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-bg-glow"></div>
             </div>
-            <div class="container">
+
+            <div class="hero-inner">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1 class="hero-title">
-                            O <span class="highlight">Futuro das Cidades</span> 
-                            <br>começa hoje
-                        </h1>
+                        <div class="hero-badge">
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
+                            Conectando tecnologia, inovação e sustentabilidade
+                        </div>
+                        <h1 class="hero-title">O Futuro das <span class="highlight">Cidades</span> começa hoje</h1>
                         <p class="hero-subtitle">
-                            Descubra como as cidades inteligentes, sensores urbanos, prédios sustentáveis 
-                            e mobilidade elétrica estão transformando o urbanismo moderno e criando 
-                            espaços mais eficientes, sustentáveis e conectados.
+                            Tecnologia, inovação e colaboração para construir cidades mais eficientes,
+                            humanas e sustentáveis.
                         </p>
                         <div class="hero-cta">
-                            <a href="#cidades-inteligentes" class="btn btn-primary btn-large">
-                                <i class="fas fa-rocket" aria-hidden="true"></i>
-                                Explore o Futuro
+                            <a href="#sensores-urbanos" class="btn btn-primary btn-large">
+                                <i class="fas fa-th-list" aria-hidden="true"></i>
+                                Conheça as Soluções
                             </a>
                             <a href="video.html" class="btn btn-secondary btn-large">
-                                <i class="fas fa-play" aria-hidden="true"></i>
-                                Ver Vídeo
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                                Assista ao Vídeo
                             </a>
-                        </div>
-                    </div>
-                    <div class="hero-visual">
-                        <div class="hero-image-container">
-                            <div class="floating-card card-1">
-                                <i class="fas fa-microchip"></i>
-                                <span>Sensores IoT</span>
-                            </div>
-                            <div class="floating-card card-2">
-                                <i class="fas fa-leaf"></i>
-                                <span>Sustentabilidade</span>
-                            </div>
-                            <div class="floating-card card-3">
-                                <i class="fas fa-charging-station"></i>
-                                <span>Mobilidade Elétrica</span>
-                            </div>
-                            <div class="floating-card card-4">
-                                <i class="fas fa-brain"></i>
-                                <span>Inteligência Artificial</span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <a href="#cidades-inteligentes" aria-label="Rolar para próxima seção">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-            </div>
-        </section>
 
-        
-        <section class="stats-section">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="150">0</div>
-                        <div class="stat-label">Cidades Inteligentes no Brasil</div>
+            <div class="values-bar">
+                <div class="values-bar-inner">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+                        <h4>Sustentabilidade</h4>
+                        <p>Soluções eco-friendly para cidades mais verdes</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="85">0</div>
-                        <div class="stat-label">% Redução de Emissões</div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-broadcast-tower" aria-hidden="true"></i></div>
+                        <h4>Tecnologia</h4>
+                        <p>Infraestrutura moderna e conectada</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="2.5">0</div>
-                        <div class="stat-label">Milhões de Sensores Urbanos</div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h4>Inclusão</h4>
+                        <p>Impacto social para todas as comunidades</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="40">0</div>
-                        <div class="stat-label">% Economia de Energia</div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                        <h4>Segurança</h4>
+                        <p>Segurança inteligente e monitoramento</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
+                        <h4>Eficiência</h4>
+                        <p>Resultados otimizados e mensuráveis</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stats-inner">
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <div>
+                            <div class="hero-stat-number">120+</div>
+                            <div class="hero-stat-label">Projetos realizados</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon"><i class="fas fa-city" aria-hidden="true"></i></div>
+                        <div>
+                            <div class="hero-stat-number">35</div>
+                            <div class="hero-stat-label">Cidades impactadas</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+                        <div>
+                            <div class="hero-stat-number">2.8M</div>
+                            <div class="hero-stat-label">Toneladas de CO₂ evitadas</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon"><i class="fas fa-user-friends" aria-hidden="true"></i></div>
+                        <div>
+                            <div class="hero-stat-number">500K+</div>
+                            <div class="hero-stat-label">Pessoas beneficiadas</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -957,8 +981,13 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-city"></i>
-                        <span>Futuro das Cidades</span>
+                        <div class="logo-icon" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="logo-text">
+                            <strong>FUTURO</strong>
+                            <em>DAS CIDADES</em>
+                        </div>
                     </div>
                     <p>Explorando as inovações que transformam o urbanismo moderno e criam cidades mais inteligentes, sustentáveis e conectadas.</p>
                     <div class="social-links">
@@ -974,10 +1003,10 @@
                     <h4>Navegação</h4>
                     <ul>
                         <li><a href="#home">Início</a></li>
-                        <li><a href="#cidades-inteligentes">Cidades Inteligentes</a></li>
-                        <li><a href="#sensores-urbanos">Sensores Urbanos</a></li>
-                        <li><a href="#predios-sustentaveis">Prédios Sustentáveis</a></li>
-                        <li><a href="#mobilidade-eletrica">Mobilidade Elétrica</a></li>
+                        <li><a href="#cidades-inteligentes">Sobre</a></li>
+                        <li><a href="#sensores-urbanos">Soluções</a></li>
+                        <li><a href="#predios-sustentaveis">Projetos</a></li>
+                        <li><a href="#mobilidade-eletrica">Equipe</a></li>
                     </ul>
                 </div>
                 
@@ -1018,7 +1047,6 @@
     </footer>
 
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/calculator.js"></script>
     <script src="assets/js/charts.js"></script>

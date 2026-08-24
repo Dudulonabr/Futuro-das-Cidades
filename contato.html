@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/fixes.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
     
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,17 +65,22 @@
     }
     </script>
 </head>
-<body>
+<body class="inner-page">
     
     
     
-    <header class="header" id="header">
+    <header class="header header--solid" id="header">
         <nav class="navbar" role="navigation" aria-label="Navegação principal">
             <div class="container">
                 <div class="navbar-brand">
                     <a href="index.html" class="logo" aria-label="Futuro das Cidades - Página inicial">
-                        <i class="fas fa-city" aria-hidden="true"></i>
-                        <span>Futuro das Cidades</span>
+                        <div class="logo-icon" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="logo-text">
+                            <strong>FUTURO</strong>
+                            <em>DAS CIDADES</em>
+                        </div>
                     </a>
                 </div>
                 
@@ -86,29 +92,18 @@
                 
                 <div class="navbar-menu">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.html#cidades-inteligentes" class="nav-link">Cidades Inteligentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.html#sensores-urbanos" class="nav-link">Sensores Urbanos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.html#predios-sustentaveis" class="nav-link">Prédios Sustentáveis</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.html#mobilidade-eletrica" class="nav-link">Mobilidade Elétrica</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="blog.html" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contato.html" class="nav-link active">Contato</a>
-                        </li>
+                        <li class="nav-item"><a href="index.html#home" class="nav-link">Início</a></li>
+                        <li class="nav-item"><a href="index.html#cidades-inteligentes" class="nav-link">Sobre</a></li>
+                        <li class="nav-item"><a href="index.html#sensores-urbanos" class="nav-link">Soluções</a></li>
+                        <li class="nav-item"><a href="index.html#predios-sustentaveis" class="nav-link">Projetos</a></li>
+                        <li class="nav-item"><a href="index.html#mobilidade-eletrica" class="nav-link">Equipe</a></li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="contato.html" class="nav-link active">Contato</a></li>
                     </ul>
+                    <a href="contato.html" class="btn-participe-mobile btn-participe">Participe</a>
                 </div>
+
+                <a href="contato.html" class="btn-participe">Participe</a>
             </div>
         </nav>
     </header>
@@ -335,8 +330,13 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-city"></i>
-                        <span>Futuro das Cidades</span>
+                        <div class="logo-icon" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="logo-text">
+                            <strong>FUTURO</strong>
+                            <em>DAS CIDADES</em>
+                        </div>
                     </div>
                     <p>Explorando as inovações que transformam o urbanismo moderno e criam cidades mais inteligentes, sustentáveis e conectadas.</p>
                     <div class="social-links">
