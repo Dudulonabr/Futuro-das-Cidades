@@ -1,0 +1,15 @@
+# Credenciais e configurações locais
+.env
+.env.*
+!.env.example
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs locais
+*.log
+
+# Ferramentas de desenvolvimento
+node_modules/
+lighthouse-report.html

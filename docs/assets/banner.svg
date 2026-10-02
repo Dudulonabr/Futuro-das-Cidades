@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+<title id="title">Futuro das Cidades</title><desc id="desc">Tecnologia urbana, sustentabilidade e desenvolvimento web</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0B1224"/><stop offset="1" stop-color="#101D38"/></linearGradient><linearGradient id="accent"><stop stop-color="#55E3F2"/><stop offset="1" stop-color="#A69BFF"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#94A3B8" stroke-opacity=".07"/></pattern></defs>
+<rect width="1280" height="360" rx="24" fill="url(#bg)"/><rect width="1280" height="360" rx="24" fill="url(#grid)"/>
+<circle cx="1160" cy="90" r="180" fill="#7969DD" opacity=".09"/><circle cx="1160" cy="280" r="130" fill="#3CD6E8" opacity=".06"/>
+<path d="M968 68H1122V124H1200M968 292H1080V226H1200" fill="none" stroke="#53718D" stroke-width="1.5"/>
+<circle cx="968" cy="68" r="4" fill="#55E3F2"/><circle cx="1200" cy="124" r="4" fill="#A69BFF"/><circle cx="968" cy="292" r="4" fill="#A69BFF"/>
+<text x="64" y="64" fill="#7ED7E9" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="700" letter-spacing="3">EDUARDO LONA / PROJETOS</text>
+<text x="60" y="165" fill="#F5F8FF" font-family="DejaVu Sans, sans-serif" font-size="58" font-weight="700">Futuro das Cidades</text>
+<text x="64" y="213" fill="#BDCCE1" font-family="DejaVu Sans, sans-serif" font-size="23">Tecnologia urbana, sustentabilidade e desenvolvimento web</text>
+<rect x="64" y="252" width="264" height="3" rx="1.5" fill="url(#accent)"/>
+<text x="64" y="303" fill="#8EA3BE" font-family="DejaVu Sans Mono, monospace" font-size="16">APRENDER. CONSTRUIR. EVOLUIR.</text>
+<rect x="1062" y="151" width="136" height="90" rx="20" fill="#16263D" stroke="#3F526D"/><text x="1130" y="213" text-anchor="middle" fill="url(#accent)" font-family="DejaVu Sans, sans-serif" font-size="49" font-weight="700">EL</text>
+</svg>
